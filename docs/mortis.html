@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="./css/main.css">
     <title>Why am I here..?</title>
 </head>
+
 <body>
     <main class="flex-container">
         <div class="container-lg">
@@ -17,7 +19,7 @@
             </form>
         </div>
     </main>
-    
+
     <script type="text/javascript">
         const form = document.querySelector('#login-form');
         const url = "https://142.93.13.241:3000/check";
@@ -37,7 +39,7 @@
         //     try {
         //         const response = await fetch(url, reqOptions)
         //         const json = await response.json();
-                
+
         //         if(json.result === true) {
         //             window.location.href = (`${window.location.origin}/rigor.html`);
         //         } else {
@@ -54,16 +56,23 @@
         // }
 
         /* I'm going to hell for this */
-        function passwordCheck(event){
+        function passwordCheck(event) {
             event.preventDefault();
 
             const password = document.querySelector("#password-field").value.toLowerCase();
-            if(password === "brazil") {
-                window.location.href = (`${window.location.origin}/rigor.html`);
+            if (password === "brazil") {
+                window.location.href = (`${window.location.origin}/WITC/rigor.html`);
+            } else {
+                form.classList.add('shaking');
+                document.querySelector('#password-field').value = "";
+                setTimeout(function () {
+                    form.classList.remove('shaking');
+                }, 500);
             }
         }
 
         form.addEventListener('submit', passwordCheck);
     </script>
 </body>
+
 </html>
