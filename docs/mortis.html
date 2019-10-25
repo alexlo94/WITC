@@ -22,33 +22,45 @@
         const form = document.querySelector('#login-form');
         const url = "https://142.93.13.241:3000/check";
 
-        async function passwordCheck(event) {
+        /* omfg github pages requires https and it's 5am before the demo I'm not doing this lmao pls fix this later */
+
+        // async function passwordCheck(event) {
+        //     event.preventDefault();
+
+        //     const reqBody = {}
+        //     reqBody.password = document.querySelector("#password-field").value;
+        //     console.log(reqBody);
+
+        //     const reqOptions = {method: "POST", body: JSON.stringify(reqBody), headers: {'Content-Type' : 'application/json'}};
+        //     console.log(reqOptions);
+
+        //     try {
+        //         const response = await fetch(url, reqOptions)
+        //         const json = await response.json();
+                
+        //         if(json.result === true) {
+        //             window.location.href = (`${window.location.origin}/rigor.html`);
+        //         } else {
+        //             form.classList.add('shaking');
+        //             document.querySelector('#password-field').value = "";
+        //             setTimeout(function() {
+        //                 form.classList.remove('shaking');
+        //             }, 500);
+        //         }
+        //     } catch (error) {
+        //         console.error('Error:', error);
+        //     }
+
+        // }
+
+        /* I'm going to hell for this */
+        function passwordCheck(event){
             event.preventDefault();
 
-            const reqBody = {}
-            reqBody.password = document.querySelector("#password-field").value;
-            console.log(reqBody);
-
-            const reqOptions = {method: "POST", body: JSON.stringify(reqBody), headers: {'Content-Type' : 'application/json'}};
-            console.log(reqOptions);
-
-            try {
-                const response = await fetch(url, reqOptions)
-                const json = await response.json();
-                
-                if(json.result === true) {
-                    window.location.href = (`${window.location.origin}/rigor.html`);
-                } else {
-                    form.classList.add('shaking');
-                    document.querySelector('#password-field').value = "";
-                    setTimeout(function() {
-                        form.classList.remove('shaking');
-                    }, 500);
-                }
-            } catch (error) {
-                console.error('Error:', error);
+            const password = document.querySelector("#password-field").value.toLowerCase();
+            if(password === "brazil") {
+                window.location.href = (`${window.location.origin}/rigor.html`);
             }
-
         }
 
         form.addEventListener('submit', passwordCheck);
