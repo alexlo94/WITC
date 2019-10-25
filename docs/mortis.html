@@ -37,7 +37,7 @@
                 const json = await response.json();
                 
                 if(json.result === true) {
-                    window.location.href = (`${window.location.origin}/dist/rigor.html`);
+                    window.location.href = (`${window.location.origin}/rigor.html`);
                 } else {
                     form.classList.add('shaking');
                     document.querySelector('#password-field').value = "";
