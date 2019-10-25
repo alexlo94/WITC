@@ -81,12 +81,24 @@ p, .p {
   color: #7389AE;
 }
 
+.color-black {
+  color: #050505;
+}
+
+.color-white {
+  color: #FFFFFF;
+}
+
 .background-color-blue {
   background: #7389AE;
 }
 
 .background-color-dark-blue {
   background: #416788;
+}
+
+.background-color-white {
+  background: #FFFFFF;
 }
 
 .padding-top-1rem {
@@ -132,6 +144,10 @@ p, .p {
       -ms-flex-align: stretch;
           align-items: stretch;
   justify-items: stretch;
+}
+
+.grid-container a {
+  color: #FFFFFF;
 }
 
 @media (min-width: 540px) {
