@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Why am I here..?</title>
+</head>
+<body>
+    <main class="flex-container">
+        <div class="container-lg">
+            <form method="get" class="stack" id="login-form">
+                <h1 class="centered">Do you know why you're here?</h1>
+                <input type="password" name="password" id="password-field" autofocus>
+                <input type="submit" value="Submit" id="password-submit">
+            </form>
+        </div>
+    </main>
+    
+    <script type="text/javascript">
+        const form = document.querySelector('#login-form');
+        const url = "http://142.93.13.241:3000/check";
+
+        async function passwordCheck(event) {
+            event.preventDefault();
+
+            const reqBody = {}
+            reqBody.password = document.querySelector("#password-field").value;
+            console.log(reqBody);
+
+            const reqOptions = {method: "POST", body: JSON.stringify(reqBody), headers: {'Content-Type' : 'application/json'}};
+            console.log(reqOptions);
+
+            try {
+                const response = await fetch(url, reqOptions)
+                const json = await response.json();
+                
+                if(json.result === true) {
+                    window.location.href = (`${window.location.origin}/dist/rigor.html`);
+                } else {
+                    form.classList.add('shaking');
+                    document.querySelector('#password-field').value = "";
+                    setTimeout(function() {
+                        form.classList.remove('shaking');
+                    }, 500);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+
+        }
+
+        form.addEventListener('submit', passwordCheck);
+    </script>
+</body>
+</html>

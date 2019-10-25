@@ -1,0 +1,45 @@
+/* Utility Classes */
+.italic {
+    font-style: italic;
+}
+
+.bolder {
+    font-weight: bolder;
+}
+
+.centered {
+    text-align: center;
+}
+
+.lighter {
+    font-weight: lighter;
+}
+
+.color-green {
+    color: $color-green;
+}
+
+.color-blue {
+    color: $color-blue;
+}
+
+.background-color-blue {
+    background: $color-blue;
+}
+
+.background-color-dark-blue {
+    background: $color-dark-blue;
+}
+
+.padding-top-1rem {
+    padding-top: 1rem;
+}
+
+.padding-bot-1rem {
+    padding-bottom: 1rem;
+}
+
+/* Debug Classes */
+.debug-green {
+    background: green;
+}

@@ -1,0 +1,80 @@
+// Import font
+@import url('https://fonts.googleapis.com/css?family=Karla:400,400i,700,700i&display=swap');
+
+/* CSS Variables: Font and Color */
+$font-family: 'Karla', sans-serif;
+$color-green: #81D2C7;
+$color-blue: #7389AE;
+$color-dark-blue: #416788;
+$color-white: #FFFFFF;
+$color-black: #050505;
+
+/* CSS Variables: Modular Scale and Spacing */
+$ratio: 1.5;
+$s0: 1rem;
+$s1: $s0 * $ratio;
+$s2: $s1 * $ratio;
+$s3: $s2 * $ratio;
+$s4: $s3 * $ratio;
+$s5: $s4 * $ratio;
+$s-1: $s0 / $ratio;
+$s-2: $s-1 / $ratio;
+$s-3: $s-2 / $ratio;
+$s-4: $s-3 / $ratio;
+$s-5: $s-4 / $ratio;
+
+$measure: 65ch;
+$line-height: $ratio;
+
+/* Global Styles */
+:root {
+    font-size: calc(.333vw + 1em);
+    font-family: $font-family;
+    color: $color-white;
+    scroll-behavior: smooth;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+    background-color: inherit;
+    font-family: inherit;
+    color: inherit;
+    overflow-wrap: break-word;
+    margin: 0;
+    padding: 0;
+    border: 0 solid;
+}
+
+h1, .h1 {
+    font-size: $s3;
+}
+
+h2, .h2 {
+    font-size: $s2;
+}
+
+h3, .h3 {
+    font-size: $s1;
+}
+
+h4, .h4 {
+    font-size: $s-1;
+}
+
+h5, .h5 {
+    font-size: $s-2;
+}
+
+h6, .h6 {
+    font-size: $s-3;
+}
+
+a, .a {
+    text-decoration: none;
+    color: $color-green;
+}
+
+p, .p {
+    line-height: $line-height;
+    font-size: 1.075rem;
+}

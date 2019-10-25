@@ -1,0 +1,25 @@
+/* Cover Component */
+.cover {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 1rem;
+  }
+  
+  .cover > * {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .cover > :first-child:not(div) {
+    margin-top: 0;
+  }
+  
+  .cover > :last-child:not(div) {
+    margin-bottom: 0;
+  }
+  
+  .cover > div {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
